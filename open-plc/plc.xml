@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project xmlns="http://www.plcopen.org/xml/tc6_0201" xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:ns1="http://www.plcopen.org/xml/tc6_0201">
+  <fileHeader companyName="Unknown" productName="Unnamed" productVersion="1" creationDateTime="2026-05-27T00:32:00"/>
+  <contentHeader name="Unnamed" modificationDateTime="2026-05-27T00:32:00">
+    <coordinateInfo>
+      <fbd>
+        <scaling x="16" y="16"/>
+      </fbd>
+      <ld>
+        <scaling x="16" y="16"/>
+      </ld>
+      <sfc>
+        <scaling x="16" y="16"/>
+      </sfc>
+    </coordinateInfo>
+  </contentHeader>
+  <types>
+    <dataTypes/>
+    <pous>
+      <pou name="main" pouType="program">
+        <interface>
+          <localVars>
+            <variable name="bt_start_t1" address="%IX0.0">
+              <type>
+                <BOOL/>
+              </type>
+            </variable>
+            <variable name="bt_stop_t1" address="%IX0.1">
+              <type>
+                <BOOL/>
+              </type>
+            </variable>
+            <variable name="led_start_t1" address="%QX0.0">
+              <type>
+                <BOOL/>
+              </type>
+            </variable>
+          </localVars>
+        </interface>
+        <body>
+          <LD>
+            <leftPowerRail localId="5914030" width="3" height="40">
+              <position x="0" y="30"/>
+              <connectionPointOut formalParameter="">
+                <relPosition x="3" y="20"/>
+              </connectionPointOut>
+            </leftPowerRail>
+            <rightPowerRail localId="9944782" width="3" height="40">
+              <position x="442" y="30"/>
+              <connectionPointIn>
+                <relPosition x="3" y="20"/>
+                <connection refLocalId="3544986" formalParameter="output">
+                  <position x="297" y="50"/>
+                  <position x="332" y="50"/>
+                </connection>
+              </connectionPointIn>
+            </rightPowerRail>
+            <contact localId="2595542" negated="false" width="24" height="24">
+              <position x="72" y="38"/>
+              <connectionPointIn>
+                <relPosition x="0" y="12"/>
+                <connection refLocalId="5914030" formalParameter="left-rail">
+                  <position x="72" y="50"/>
+                  <position x="3" y="50"/>
+                </connection>
+              </connectionPointIn>
+              <connectionPointOut>
+                <relPosition x="24" y="12"/>
+              </connectionPointOut>
+              <variable>bt_start_t1</variable>
+            </contact>
+            <contact localId="488193" negated="false" width="24" height="24">
+              <position x="72" y="130"/>
+              <connectionPointIn>
+                <relPosition x="0" y="12"/>
+                <connection refLocalId="5914030" formalParameter="left-rail">
+                  <position x="72" y="142"/>
+                  <position x="27" y="142"/>
+                  <position x="27" y="50"/>
+                  <position x="3" y="50"/>
+                </connection>
+              </connectionPointIn>
+              <connectionPointOut>
+                <relPosition x="24" y="12"/>
+              </connectionPointOut>
+              <variable>led_start_t1</variable>
+            </contact>
+            <contact localId="6368746" negated="true" width="24" height="24">
+              <position x="190" y="38"/>
+              <connectionPointIn>
+                <relPosition x="0" y="12"/>
+                <connection refLocalId="2595542" formalParameter="output">
+                  <position x="190" y="50"/>
+                  <position x="96" y="50"/>
+                </connection>
+                <connection refLocalId="488193" formalParameter="output">
+                  <position x="190" y="50"/>
+                  <position x="145" y="50"/>
+                  <position x="145" y="142"/>
+                  <position x="96" y="142"/>
+                </connection>
+              </connectionPointIn>
+              <connectionPointOut>
+                <relPosition x="24" y="12"/>
+              </connectionPointOut>
+              <variable>bt_stop_t1</variable>
+            </contact>
+            <coil localId="3544986" negated="false" width="28" height="24">
+              <position x="304" y="38"/>
+              <connectionPointIn>
+                <relPosition x="0" y="12"/>
+                <connection refLocalId="6368746" formalParameter="output">
+                  <position x="304" y="50"/>
+                  <position x="214" y="50"/>
+                </connection>
+              </connectionPointIn>
+              <connectionPointOut>
+                <relPosition x="28" y="12"/>
+              </connectionPointOut>
+              <variable>led_start_t1</variable>
+            </coil>
+          </LD>
+        </body>
+        <documentation>
+          <xhtml:p><![CDATA[ ]]></xhtml:p>
+        </documentation>
+      </pou>
+    </pous>
+  </types>
+  <instances>
+    <configurations>
+      <configuration name="Config0">
+        <resource name="Res0">
+          <task name="task0" priority="1" interval="T#20ms">
+            <pouInstance name="instance0" typeName="main"/>
+          </task>
+        </resource>
+      </configuration>
+    </configurations>
+  </instances>
+</project>

@@ -1,0 +1,504 @@
+{
+  "name": "FactoryIO",
+  "protocol": "modbus-tcp",
+  "modbusTcpConfig": {
+    "transport": "tcp",
+    "host": "127.0.0.1",
+    "port": 502,
+    "timeout": 1000,
+    "ioGroups": [
+      {
+        "id": "f1d7c2bc-e6da-4956-973a-9cf5807c49e9",
+        "name": "dig_inputs",
+        "functionCode": "2",
+        "cycleTime": 100,
+        "offset": "0",
+        "length": 16,
+        "errorHandling": "keep-last-value",
+        "ioPoints": [
+          {
+            "id": "094b2be3-8026-4535-aded-9587f9c7995c",
+            "name": "dig_inputs_0",
+            "type": "Digital Input (Discrete Input)",
+            "iecLocation": "%IX0.0",
+            "alias": ""
+          },
+          {
+            "id": "1ff6b9e8-d5a9-4f41-b0c5-b83ca1383317",
+            "name": "dig_inputs_1",
+            "type": "Digital Input (Discrete Input)",
+            "iecLocation": "%IX0.1",
+            "alias": ""
+          },
+          {
+            "id": "9c7bc0cd-147c-4891-a531-bc31dbf1fff6",
+            "name": "dig_inputs_2",
+            "type": "Digital Input (Discrete Input)",
+            "iecLocation": "%IX0.2",
+            "alias": ""
+          },
+          {
+            "id": "ac32b8da-364a-4985-9396-03482408afb1",
+            "name": "dig_inputs_3",
+            "type": "Digital Input (Discrete Input)",
+            "iecLocation": "%IX0.3",
+            "alias": ""
+          },
+          {
+            "id": "f0cb9ec7-4b4a-4d1e-9179-889b2e1c02ea",
+            "name": "dig_inputs_4",
+            "type": "Digital Input (Discrete Input)",
+            "iecLocation": "%IX0.4",
+            "alias": ""
+          },
+          {
+            "id": "b99c695d-be62-4f3d-973e-ead76fba7576",
+            "name": "dig_inputs_5",
+            "type": "Digital Input (Discrete Input)",
+            "iecLocation": "%IX0.5",
+            "alias": ""
+          },
+          {
+            "id": "5ae48973-651d-4149-82ba-553f5dc38fbf",
+            "name": "dig_inputs_6",
+            "type": "Digital Input (Discrete Input)",
+            "iecLocation": "%IX0.6",
+            "alias": ""
+          },
+          {
+            "id": "493cb58c-3900-4a04-a93f-9db35fcd40a7",
+            "name": "dig_inputs_7",
+            "type": "Digital Input (Discrete Input)",
+            "iecLocation": "%IX0.7",
+            "alias": ""
+          },
+          {
+            "id": "1e6026dc-9320-47ac-b073-3f5b7fc54ac4",
+            "name": "dig_inputs_8",
+            "type": "Digital Input (Discrete Input)",
+            "iecLocation": "%IX1.0",
+            "alias": ""
+          },
+          {
+            "id": "7299c092-678b-42e2-82cd-2b80e2b4101e",
+            "name": "dig_inputs_9",
+            "type": "Digital Input (Discrete Input)",
+            "iecLocation": "%IX1.1",
+            "alias": ""
+          },
+          {
+            "id": "641d3c93-201d-43a7-93df-5fe81661ea74",
+            "name": "dig_inputs_10",
+            "type": "Digital Input (Discrete Input)",
+            "iecLocation": "%IX1.2",
+            "alias": ""
+          },
+          {
+            "id": "ab8bca1a-0819-4079-8cb8-046cdfcfe2d9",
+            "name": "dig_inputs_11",
+            "type": "Digital Input (Discrete Input)",
+            "iecLocation": "%IX1.3",
+            "alias": ""
+          },
+          {
+            "id": "af17c09a-4399-4e07-b40f-e227600b18ec",
+            "name": "dig_inputs_12",
+            "type": "Digital Input (Discrete Input)",
+            "iecLocation": "%IX1.4",
+            "alias": ""
+          },
+          {
+            "id": "364f7baa-c958-452e-a242-1c93fe9cea1c",
+            "name": "dig_inputs_13",
+            "type": "Digital Input (Discrete Input)",
+            "iecLocation": "%IX1.5",
+            "alias": ""
+          },
+          {
+            "id": "21d119c3-76ad-496e-a4eb-6a8c199baf79",
+            "name": "dig_inputs_14",
+            "type": "Digital Input (Discrete Input)",
+            "iecLocation": "%IX1.6",
+            "alias": ""
+          },
+          {
+            "id": "84e0853f-b46d-4c7c-9695-64a5844ffe09",
+            "name": "dig_inputs_15",
+            "type": "Digital Input (Discrete Input)",
+            "iecLocation": "%IX1.7",
+            "alias": ""
+          }
+        ]
+      },
+      {
+        "id": "4b28164b-c0f0-40cd-a1a6-64fa0c2721f2",
+        "name": "dig_output",
+        "functionCode": "15",
+        "cycleTime": 100,
+        "offset": "0",
+        "length": 16,
+        "errorHandling": "keep-last-value",
+        "ioPoints": [
+          {
+            "id": "370c165c-7842-4ae4-8191-0ec8eda56674",
+            "name": "dig_output_0",
+            "type": "Digital Output (Multiple Coils)",
+            "iecLocation": "%QX0.0",
+            "alias": ""
+          },
+          {
+            "id": "0eb801ae-04b0-46ce-b22a-7fcac074c3f7",
+            "name": "dig_output_1",
+            "type": "Digital Output (Multiple Coils)",
+            "iecLocation": "%QX0.1",
+            "alias": ""
+          },
+          {
+            "id": "a4db4b95-43f5-4a7c-9aaf-98f90b3dc440",
+            "name": "dig_output_2",
+            "type": "Digital Output (Multiple Coils)",
+            "iecLocation": "%QX0.2",
+            "alias": ""
+          },
+          {
+            "id": "9d25655f-2bab-48ba-baf4-cd3ba51a104e",
+            "name": "dig_output_3",
+            "type": "Digital Output (Multiple Coils)",
+            "iecLocation": "%QX0.3",
+            "alias": ""
+          },
+          {
+            "id": "2b2a9498-49ce-421c-976f-91db05c2076f",
+            "name": "dig_output_4",
+            "type": "Digital Output (Multiple Coils)",
+            "iecLocation": "%QX0.4",
+            "alias": ""
+          },
+          {
+            "id": "5bc8a070-b5ac-4e70-b9ed-e648257de79a",
+            "name": "dig_output_5",
+            "type": "Digital Output (Multiple Coils)",
+            "iecLocation": "%QX0.5",
+            "alias": ""
+          },
+          {
+            "id": "ff3fa942-acf0-4c28-9883-4053db4683a6",
+            "name": "dig_output_6",
+            "type": "Digital Output (Multiple Coils)",
+            "iecLocation": "%QX0.6",
+            "alias": ""
+          },
+          {
+            "id": "d1a3d212-7770-4d1c-828f-26d8605bedf4",
+            "name": "dig_output_7",
+            "type": "Digital Output (Multiple Coils)",
+            "iecLocation": "%QX0.7",
+            "alias": ""
+          },
+          {
+            "id": "ccfc194c-fc9d-44e3-afe5-1a7e2cd2d5b1",
+            "name": "dig_output_8",
+            "type": "Digital Output (Multiple Coils)",
+            "iecLocation": "%QX1.0",
+            "alias": ""
+          },
+          {
+            "id": "d545de6f-c825-4dc2-876c-fe3c599d87d2",
+            "name": "dig_output_9",
+            "type": "Digital Output (Multiple Coils)",
+            "iecLocation": "%QX1.1",
+            "alias": ""
+          },
+          {
+            "id": "081960ab-abd2-4b20-8457-b4fdfd0b3529",
+            "name": "dig_output_10",
+            "type": "Digital Output (Multiple Coils)",
+            "iecLocation": "%QX1.2",
+            "alias": ""
+          },
+          {
+            "id": "31c0024c-7ee8-44cd-b4ef-eb83ae5f034d",
+            "name": "dig_output_11",
+            "type": "Digital Output (Multiple Coils)",
+            "iecLocation": "%QX1.3",
+            "alias": ""
+          },
+          {
+            "id": "fb3fbeea-2a02-435f-b568-1cdef806750f",
+            "name": "dig_output_12",
+            "type": "Digital Output (Multiple Coils)",
+            "iecLocation": "%QX1.4",
+            "alias": ""
+          },
+          {
+            "id": "6b3e00cf-a71f-446e-a4f9-8566a8e7a7cc",
+            "name": "dig_output_13",
+            "type": "Digital Output (Multiple Coils)",
+            "iecLocation": "%QX1.5",
+            "alias": ""
+          },
+          {
+            "id": "160a03cc-d154-4d3a-9c71-70b5f7348a45",
+            "name": "dig_output_14",
+            "type": "Digital Output (Multiple Coils)",
+            "iecLocation": "%QX1.6",
+            "alias": ""
+          },
+          {
+            "id": "ed218dd1-6579-4595-b37d-d29ead741f7b",
+            "name": "dig_output_15",
+            "type": "Digital Output (Multiple Coils)",
+            "iecLocation": "%QX1.7",
+            "alias": ""
+          }
+        ]
+      },
+      {
+        "id": "e7e0d292-2ed8-4e95-a009-47225464889c",
+        "name": "anal_inputs",
+        "functionCode": "4",
+        "cycleTime": 100,
+        "offset": "0",
+        "length": 16,
+        "errorHandling": "keep-last-value",
+        "ioPoints": [
+          {
+            "id": "40c2f8b2-8b97-4170-a45b-16c7c71f151b",
+            "name": "anal_inputs_0",
+            "type": "Analog Input (Input Register)",
+            "iecLocation": "%IW0",
+            "alias": ""
+          },
+          {
+            "id": "95ead632-b4d2-4c0d-8520-caa414c39f43",
+            "name": "anal_inputs_1",
+            "type": "Analog Input (Input Register)",
+            "iecLocation": "%IW1",
+            "alias": ""
+          },
+          {
+            "id": "f0a99725-0b33-4cee-b1ed-c26cc2c3e207",
+            "name": "anal_inputs_2",
+            "type": "Analog Input (Input Register)",
+            "iecLocation": "%IW2",
+            "alias": ""
+          },
+          {
+            "id": "1753b03e-9419-4fbb-b0b5-73774835d700",
+            "name": "anal_inputs_3",
+            "type": "Analog Input (Input Register)",
+            "iecLocation": "%IW3",
+            "alias": ""
+          },
+          {
+            "id": "34af1a5c-0fb7-4463-97c0-d184c8724757",
+            "name": "anal_inputs_4",
+            "type": "Analog Input (Input Register)",
+            "iecLocation": "%IW4",
+            "alias": ""
+          },
+          {
+            "id": "98025f49-6024-42af-bccc-5a09832a1a63",
+            "name": "anal_inputs_5",
+            "type": "Analog Input (Input Register)",
+            "iecLocation": "%IW5",
+            "alias": ""
+          },
+          {
+            "id": "cdf97831-8f55-4c41-bb60-e469a9370ba3",
+            "name": "anal_inputs_6",
+            "type": "Analog Input (Input Register)",
+            "iecLocation": "%IW6",
+            "alias": ""
+          },
+          {
+            "id": "eae23368-d4f5-4f69-b696-a97a5e9da4ce",
+            "name": "anal_inputs_7",
+            "type": "Analog Input (Input Register)",
+            "iecLocation": "%IW7",
+            "alias": ""
+          },
+          {
+            "id": "e974e46d-4b98-4166-bc80-820336dd8392",
+            "name": "anal_inputs_8",
+            "type": "Analog Input (Input Register)",
+            "iecLocation": "%IW8",
+            "alias": ""
+          },
+          {
+            "id": "406e45e9-ee2b-4591-abb7-c7bb3c1501af",
+            "name": "anal_inputs_9",
+            "type": "Analog Input (Input Register)",
+            "iecLocation": "%IW9",
+            "alias": ""
+          },
+          {
+            "id": "acd7c0e1-3566-465d-97df-5a81bb53bf6e",
+            "name": "anal_inputs_10",
+            "type": "Analog Input (Input Register)",
+            "iecLocation": "%IW10",
+            "alias": ""
+          },
+          {
+            "id": "333045d0-451f-4d91-a2d0-1f1bd80f479a",
+            "name": "anal_inputs_11",
+            "type": "Analog Input (Input Register)",
+            "iecLocation": "%IW11",
+            "alias": ""
+          },
+          {
+            "id": "40c336e2-2f6f-4e3d-a57c-f8fe790a804e",
+            "name": "anal_inputs_12",
+            "type": "Analog Input (Input Register)",
+            "iecLocation": "%IW12",
+            "alias": ""
+          },
+          {
+            "id": "04622e6c-ae4c-43a1-a329-c5683a3ff2b2",
+            "name": "anal_inputs_13",
+            "type": "Analog Input (Input Register)",
+            "iecLocation": "%IW13",
+            "alias": ""
+          },
+          {
+            "id": "02a078d6-6390-42e4-8c51-be617793f3d5",
+            "name": "anal_inputs_14",
+            "type": "Analog Input (Input Register)",
+            "iecLocation": "%IW14",
+            "alias": ""
+          },
+          {
+            "id": "b6a05a34-adfd-4d41-ab5a-3eff8a30f3de",
+            "name": "anal_inputs_15",
+            "type": "Analog Input (Input Register)",
+            "iecLocation": "%IW15",
+            "alias": ""
+          }
+        ]
+      },
+      {
+        "id": "2f2b8433-a41b-4a15-9c92-e2a916df975e",
+        "name": "anal_outputs",
+        "functionCode": "16",
+        "cycleTime": 100,
+        "offset": "0",
+        "length": 16,
+        "errorHandling": "keep-last-value",
+        "ioPoints": [
+          {
+            "id": "6f05eb95-2b85-4a61-bb79-a7284b8d1db0",
+            "name": "anal_outputs_0",
+            "type": "Analog Output (Multiple Registers)",
+            "iecLocation": "%QW0",
+            "alias": ""
+          },
+          {
+            "id": "8e32171b-2359-407e-be5e-c7b85cc2d33f",
+            "name": "anal_outputs_1",
+            "type": "Analog Output (Multiple Registers)",
+            "iecLocation": "%QW1",
+            "alias": ""
+          },
+          {
+            "id": "f1b585cf-4839-4daf-835b-4cf5920d809a",
+            "name": "anal_outputs_2",
+            "type": "Analog Output (Multiple Registers)",
+            "iecLocation": "%QW2",
+            "alias": ""
+          },
+          {
+            "id": "0d2c2d05-7f84-49e9-b478-aea3ebd2cdf9",
+            "name": "anal_outputs_3",
+            "type": "Analog Output (Multiple Registers)",
+            "iecLocation": "%QW3",
+            "alias": ""
+          },
+          {
+            "id": "601b3b8a-4db4-4994-86ae-9d817fa5e1a2",
+            "name": "anal_outputs_4",
+            "type": "Analog Output (Multiple Registers)",
+            "iecLocation": "%QW4",
+            "alias": ""
+          },
+          {
+            "id": "22a19a90-160e-443b-8846-f766ce4e68a3",
+            "name": "anal_outputs_5",
+            "type": "Analog Output (Multiple Registers)",
+            "iecLocation": "%QW5",
+            "alias": ""
+          },
+          {
+            "id": "173eb982-757f-4735-8c18-ba3acc63fe05",
+            "name": "anal_outputs_6",
+            "type": "Analog Output (Multiple Registers)",
+            "iecLocation": "%QW6",
+            "alias": ""
+          },
+          {
+            "id": "7395fb9e-d6dc-4262-88e4-1652b1e79c8b",
+            "name": "anal_outputs_7",
+            "type": "Analog Output (Multiple Registers)",
+            "iecLocation": "%QW7",
+            "alias": ""
+          },
+          {
+            "id": "e70f61ad-b6c4-4b9a-a87a-64e3282a589c",
+            "name": "anal_outputs_8",
+            "type": "Analog Output (Multiple Registers)",
+            "iecLocation": "%QW8",
+            "alias": ""
+          },
+          {
+            "id": "ea72a957-bca9-4adb-a476-107590a094ad",
+            "name": "anal_outputs_9",
+            "type": "Analog Output (Multiple Registers)",
+            "iecLocation": "%QW9",
+            "alias": ""
+          },
+          {
+            "id": "8ab09c37-957f-4682-a63c-d6aee19351e9",
+            "name": "anal_outputs_10",
+            "type": "Analog Output (Multiple Registers)",
+            "iecLocation": "%QW10",
+            "alias": ""
+          },
+          {
+            "id": "0ff666db-69ae-433a-8a99-a71f2c59a3b0",
+            "name": "anal_outputs_11",
+            "type": "Analog Output (Multiple Registers)",
+            "iecLocation": "%QW11",
+            "alias": ""
+          },
+          {
+            "id": "4359aae2-ace6-4c9f-b0da-13d59c49a544",
+            "name": "anal_outputs_12",
+            "type": "Analog Output (Multiple Registers)",
+            "iecLocation": "%QW12",
+            "alias": ""
+          },
+          {
+            "id": "0e94ff45-3de6-41f8-988d-af2c1cc9084e",
+            "name": "anal_outputs_13",
+            "type": "Analog Output (Multiple Registers)",
+            "iecLocation": "%QW13",
+            "alias": ""
+          },
+          {
+            "id": "500b7259-9a63-49fc-876e-d1e255733247",
+            "name": "anal_outputs_14",
+            "type": "Analog Output (Multiple Registers)",
+            "iecLocation": "%QW14",
+            "alias": ""
+          },
+          {
+            "id": "4cb1e471-0c8c-4e7c-b3b6-604a755bba78",
+            "name": "anal_outputs_15",
+            "type": "Analog Output (Multiple Registers)",
+            "iecLocation": "%QW15",
+            "alias": ""
+          }
+        ]
+      }
+    ]
+  }
+}
