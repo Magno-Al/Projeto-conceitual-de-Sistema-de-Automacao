@@ -24,6 +24,9 @@ class _TankControls(QGroupBox):
         self.btn_drain = QPushButton("Esvaziar")
         self.status = QLabel("—")
 
+        for btn in (self.btn_fill, self.btn_pause, self.btn_drain):
+            btn.setEnabled(False)
+
         self.btn_fill.clicked.connect(self._on_fill)
         self.btn_pause.clicked.connect(self._on_pause)
         self.btn_drain.clicked.connect(self._on_drain)
@@ -52,6 +55,10 @@ class _TankControls(QGroupBox):
         self.coil_command.emit(self._fill.address, False)
         self.coil_command.emit(self._drain.address, True)
 
+    def set_connected(self, connected: bool):
+        for btn in (self.btn_fill, self.btn_pause, self.btn_drain):
+            btn.setEnabled(connected)
+
     def update_status(self, snapshot, nivel_tag, vin_tag, vout_tag):
         nivel = snapshot.get(nivel_tag.name)
         vin = snapshot.get(vin_tag.name)
@@ -74,6 +81,10 @@ class ManualPanel(QWidget):
         lay = QHBoxLayout(self)
         lay.addWidget(self.t1)
         lay.addWidget(self.t2)
+
+    def set_connected(self, connected: bool):
+        self.t1.set_connected(connected)
+        self.t2.set_connected(connected)
 
     def update_values(self, snapshot):
         self.t1.update_status(snapshot, tags.NIVEL_T1, tags.VALV_ENTRADA_T1, tags.VALV_SAIDA_T1)

@@ -1,6 +1,6 @@
 """Janela principal do SCADA: barra de conexão + sinótico + painéis."""
 
-from PySide6.QtCore import Qt
+from PySide6.QtCore import Qt, QTimer
 from PySide6.QtWidgets import (
     QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, QLabel, QLineEdit,
     QPushButton, QTabWidget, QStatusBar
@@ -64,6 +64,7 @@ class MainWindow(QMainWindow):
 
         self.setStatusBar(QStatusBar())
         self._set_status(False, "Desconectado")
+        self._set_controls_enabled(False)
 
         # ---------------- ligações ----------------
         self.btn_connect.clicked.connect(self._connect)
@@ -87,6 +88,9 @@ class MainWindow(QMainWindow):
         self.engine.state_changed.connect(self.auto.on_state_changed)
         self.engine.progress.connect(self.auto.on_progress)
 
+        # auto-conectar ao iniciar
+        QTimer.singleShot(300, self._connect)
+
     @staticmethod
     def _wrap(*widgets):
         w = QWidget()
@@ -106,19 +110,36 @@ class MainWindow(QMainWindow):
         self.worker.configure(self.host_edit.text().strip(), port)
         if not self.worker.isRunning():
             self.worker.start()
+        # Desabilita ambos enquanto aguarda a resposta da conexão
         self.btn_connect.setEnabled(False)
-        self.btn_disconnect.setEnabled(True)
+        self.btn_connect.setText("Conectando...")
+        self.btn_disconnect.setEnabled(False)
 
     def _disconnect(self):
         self.engine.stop()
         self.worker.stop()
         self.worker.wait(2000)
         self.btn_connect.setEnabled(True)
+        self.btn_connect.setText("Conectar")
         self.btn_disconnect.setEnabled(False)
         self._set_status(False, "Desconectado")
+        self._set_controls_enabled(False)
 
     def _on_connection_changed(self, connected, msg):
         self._set_status(connected, msg)
+        if connected:
+            self.btn_connect.setEnabled(False)
+            self.btn_connect.setText("Conectar")
+            self.btn_disconnect.setEnabled(True)
+        else:
+            self.btn_connect.setEnabled(True)
+            self.btn_connect.setText("Conectar")
+            self.btn_disconnect.setEnabled(False)
+        self._set_controls_enabled(connected)
+
+    def _set_controls_enabled(self, enabled: bool):
+        self.manual.set_connected(enabled)
+        self.auto.set_connected(enabled)
 
     def _set_status(self, connected, msg):
         cor = "#2ecc71" if connected else "#e74c3c"

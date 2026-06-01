@@ -1,9 +1,3 @@
-"""Entrypoint do SCADA.
-
-Uso:
-    cd scada && python app.py
-"""
-
 import sys
 
 from PySide6.QtWidgets import QApplication

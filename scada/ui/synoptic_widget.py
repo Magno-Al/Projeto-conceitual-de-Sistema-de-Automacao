@@ -69,7 +69,7 @@ class SynopticWidget(QWidget):
         f.setBold(True)
         f.setPointSize(11)
         p.setFont(f)
-        p.drawText(QRectF(x, y - 28, w, 22), Qt.AlignCenter, title)
+        p.drawText(QRectF(x, y - 50, w, 22), Qt.AlignCenter, title)
 
         # tubulação de entrada (topo) + válvula
         in_open = self._valve_open(v_in)

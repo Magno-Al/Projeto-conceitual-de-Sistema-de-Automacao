@@ -1,19 +1,3 @@
-"""Máquina de estados do processo automático.
-
-Sequência pedida (parametrizada por 4 valores):
-    1. FILL_T1           enche T1 até nível-alvo 1
-    2. HOLD_T1           pausa, aguarda tempo 1
-    3. DRAIN_T1_FILL_T2  esvazia T1 enquanto enche T2 até nível-alvo 2
-    4. HOLD_T2           aguarda tempo 2
-    5. DRAIN_T2          esvazia T2 e finaliza
-    -> DONE
-
-O engine NÃO controla a planta diretamente: ele apenas decide o estado
-desejado das coils de comando e emite `coil_command`. O controle real continua
-no PLC (que combina esses comandos com a lógica de selo). É supervisão +
-sequenciamento — o papel de um SCADA.
-"""
-
 import time
 from enum import Enum
 
@@ -33,10 +17,9 @@ class State(Enum):
 
 
 class ProcessEngine(QObject):
-    # (address, value) -> ligado/desligar coil de comando
     coil_command = Signal(int, bool)
-    state_changed = Signal(str)          # nome do estado p/ exibição
-    progress = Signal(str)               # texto de detalhe (tempo restante, nível, etc.)
+    state_changed = Signal(str)    
+    progress = Signal(str)            
 
     TICK_MS = 200
 
@@ -53,7 +36,7 @@ class ProcessEngine(QObject):
         self._alvo_t2 = 0
         self._tempo_t2 = 0.0
 
-        # nível corrente (atualizado externamente pelo snapshot Modbus)
+        # nível corrente 
         self._nivel_t1 = 0
         self._nivel_t2 = 0
 

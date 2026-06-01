@@ -167,8 +167,6 @@ void glueVars()
     
     bool_input_ptr[0][2] = (IEC_BOOL *)__IX0_2;
     
-    bool_input_ptr[0][3] = (IEC_BOOL *)__IX0_3;
-    
     bool_output_ptr[0][0] = (IEC_BOOL *)__QX0_0;
     
     bool_output_ptr[0][1] = (IEC_BOOL *)__QX0_1;
@@ -198,6 +196,16 @@ void glueVars()
     int_output_ptr[5] = (IEC_UINT *)__QW5;
     
     int_output_ptr[6] = (IEC_UINT *)__QW6;
+    
+    bool_output_ptr[2][0] = (IEC_BOOL *)__QX2_0;
+    
+    bool_output_ptr[2][1] = (IEC_BOOL *)__QX2_1;
+    
+    bool_output_ptr[2][2] = (IEC_BOOL *)__QX2_2;
+    
+    bool_output_ptr[2][3] = (IEC_BOOL *)__QX2_3;
+    
+    bool_output_ptr[2][4] = (IEC_BOOL *)__QX2_4;
     
 }
 

@@ -52,6 +52,7 @@ class AutoPanel(QGroupBox):
 
         self.lbl_state = QLabel("Estado: Parado")
         self.lbl_progress = QLabel("—")
+        self._connected = False
 
         lay = QVBoxLayout(self)
         lay.addLayout(form)
@@ -72,10 +73,18 @@ class AutoPanel(QGroupBox):
         self.stop_requested.emit()
         self._reset_buttons()
 
+    def set_connected(self, connected: bool):
+        self._connected = connected
+        if not connected:
+            self.stop_requested.emit()
+            self.btn_stop.setEnabled(False)
+        self.btn_start.setEnabled(connected)
+        self._set_params_enabled(connected)
+
     def _reset_buttons(self):
-        self.btn_start.setEnabled(True)
+        self.btn_start.setEnabled(self._connected)
         self.btn_stop.setEnabled(False)
-        self._set_params_enabled(True)
+        self._set_params_enabled(self._connected)
 
     def _set_params_enabled(self, enabled):
         for w in (self.alvo_t1, self.tempo_t1, self.alvo_t2, self.tempo_t2):

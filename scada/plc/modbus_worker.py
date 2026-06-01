@@ -1,11 +1,3 @@
-"""Camada de comunicação Modbus TCP (cliente do servidor do OpenPLC).
-
-Roda em uma QThread própria: faz polling periódico de todas as tags e emite um
-snapshot via sinal Qt. As escritas (comandos) vêm de outras threads e são
-enfileiradas para serem executadas dentro do loop (o cliente pymodbus não é
-thread-safe, então toda E/S acontece numa única thread).
-"""
-
 import inspect
 import queue
 

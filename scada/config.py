@@ -1,31 +1,12 @@
-"""Configuração central do SCADA.
-
-Todos os parâmetros ajustáveis ficam aqui para facilitar a calibração no
-laboratório (porta do servidor Modbus do OpenPLC, escala dos níveis, etc.).
-"""
-
-# ---------------------------------------------------------------------------
-# Conexão Modbus TCP com o servidor do OpenPLC
-# ---------------------------------------------------------------------------
-# Atenção: o Factory I/O ocupa a porta 502 (ele é o servidor que o OpenPLC,
-# como mestre, fica lendo). Portanto o *servidor Modbus do próprio OpenPLC*
-# (onde este SCADA conecta) normalmente está em outra porta. Confira em
-# OpenPLC -> Settings -> Modbus Server e ajuste abaixo.
 MODBUS_HOST = "127.0.0.1"
-MODBUS_PORT = 502          # ajuste p/ a porta do servidor do OpenPLC (ex.: 1502)
-MODBUS_UNIT_ID = 1         # slave/unit id do OpenPLC
-MODBUS_TIMEOUT = 1.0       # segundos
+MODBUS_PORT = 5020    
+MODBUS_UNIT_ID = 1      
+MODBUS_TIMEOUT = 1.0  
 
-# Período de polling da camada Modbus (ms)
 POLL_INTERVAL_MS = 200
 
-# ---------------------------------------------------------------------------
-# Escala dos sensores de nível (valor cru do Modbus -> porcentagem)
-# ---------------------------------------------------------------------------
-# Os níveis chegam como INT cru vindo do Factory I/O. Após observar o range
-# real no laboratório, ajuste LEVEL_RAW_MIN/MAX para a conversão cru -> %.
 LEVEL_RAW_MIN = 0
-LEVEL_RAW_MAX = 10000      # valor cru correspondente a 100% (calibrar!)
+LEVEL_RAW_MAX = 1000 
 
 
 def raw_to_percent(raw: int) -> float:
@@ -42,8 +23,4 @@ def percent_to_raw(pct: float) -> int:
     span = LEVEL_RAW_MAX - LEVEL_RAW_MIN
     return int(LEVEL_RAW_MIN + (pct / 100.0) * span)
 
-
-# ---------------------------------------------------------------------------
-# Valor de abertura total de válvula (usado pelo ladder / mock): 0..1000
-# ---------------------------------------------------------------------------
 VALVE_OPEN = 1000
